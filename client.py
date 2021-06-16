@@ -9,27 +9,15 @@ import cv2
 import pickle
 import struct
 
-
-# In[2]:
-
-
 client_s = s.socket(s.AF_INET,s.SOCK_STREAM)
 host_ip = '192.168.0.107' 
 port = 2204
 print("Socket Created Successfully")
 
-
-# In[3]:
-
-
 client_s.connect((host_ip,port))
 data = b""
 payload_size = struct.calcsize("Q")
 print("Socket Accepted")
-
-
-# In[4]:
-
 
 while True:
     while len(data) < payload_size:
@@ -51,14 +39,6 @@ while True:
 client_s.close()
 cv2.destroyAllWindows()
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
